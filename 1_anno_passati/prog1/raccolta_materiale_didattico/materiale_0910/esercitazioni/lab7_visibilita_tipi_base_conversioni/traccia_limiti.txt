@@ -1,0 +1,89 @@
+/*
+  Scrivere un programma che stampi i limiti dei tipi char, int, float e double.
+  
+  Esempio di output:
+
+  int limits:
+        dimensioni in bytes: 4
+        min: -2147483648
+        max: 2147483647
+        max cifre base 2: 31
+        max cifre base 10: 9
+        ha segno: 1
+        e' intero: 1
+        e' esatto: 1
+        epsilon: 0
+        errore arrotondamento: 0
+
+  float limits:
+        dimensioni in bytes: 4
+        min: 1.17549e-38
+        max: 3.40282e+38
+        max cifre base 2: 24
+        max cifre base 10: 6
+        ha segno: 1
+        e' intero: 0
+        e' esatto: 0
+        epsilon: 1.19209e-07
+        errore arrotondamento: 0.5
+        esponente minimo in base 2: -125
+        esponente minimo in base 10: -37
+        esponente massimo in base 2: 128
+        esponente massimo in base 10: 38
+
+  double limits:
+        dimensioni in bytes: 8
+        min: 2.22507e-308
+        max: 1.79769e+308
+        max cifre base 2: 53
+        max cifre base 10: 15
+        ha segno: 1
+        e' intero: 0
+        e' esatto: 0
+        epsilon: 2.22045e-16
+        errore arrotondamento: 0.5
+        esponente minimo in base 2: -1021
+        esponente minimo in base 10: -307
+        esponente massimo in base 2: 1024
+        esponente massimo in base 10: 308
+  char limits:
+        dimensioni in bytes: 1
+        min: -128
+        max: 127
+        max cifre base 2: 7
+        max cifre base 10: 2
+        ha segno: 1
+        e' intero: 1
+        e' esatto: 1
+        epsilon: 
+        errore arrotondamento: 
+*/
+
+In C++, includendo <limits> si ha accesso alle seguenti informazioni:
+numeric_limits<nome_tipo>::min()
+	valore minimo per il tipo nome_tipo
+numeric_limits<nome_tipo>::max()
+	valore massimo per il tipo nome_tipo
+numeric_limits<nome_tipo>::digits
+	numero di cifre in base 2
+numeric_limits<nome_tipo>::digits10
+	numero di cifre in base 10
+numeric_limits<nome_tipo>::is_signed
+	true se nome_tipo ammette valori negativi
+numeric_limits<nome_tipo>::is_integer
+	true se nome_tipo e' discreto (int, char, bool, enum, ...)
+Le seguenti informazioni hanno significato per i numeri in virgola mobile:
+numeric_limits<nome_tipo>::epsilon()
+	valore positivo minimo epsilon tale che 1 + epsilon != 1
+numeric_limits<nome_tipo>::round_error()
+	errore di arrotondamento
+numeric_limits<nome_tipo>::min_exponent
+	esponente minimo in base 2, cioè valore minimo esp, tale 	che il numero di possa scrivere nella forma m*(2^esp)
+numeric_limits<nome_tipo>::min_exponent10
+	esponente minimo in base 10, cioè valore minimo esp, tale 	che il numero di possa scrivere nella forma m*(10^esp)
+
+numeric_limits<nome_tipo>::max_exponent
+	esponente massimo in base 2, cioè valore massimo esp, 		tale che il numero di possa scrivere nella forma m*(2^esp)
+numeric_limits<nome_tipo>::max_exponent10
+	esponente massimo in base 10, cioè valore massimo esp, 	tale che il numero di possa scrivere nella forma 			m*(10^esp)
+

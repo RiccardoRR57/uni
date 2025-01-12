@@ -1,0 +1,30 @@
+/*
+  Scrivere un programma che definisca un vettore di interi di lunghezza
+  prefissata (a tempo di scrittura del programma) e lo inizializzi con
+  valori casuali compresi tra due valori interi introdotti
+  dall'utente. Il programma riversa quindi in un secondo vettore i soli
+  elementi di valore pari contenuti nel primo, infine stampa il
+  contenuto dei due vettori.
+  Il riversamento DEVE essere effettuato da una funzione dedicata.
+  La funzione deve o non deve ritornare il numero di elementi copiati?
+*/
+/*
+Scrivere un programma che chieda all'utente di inserire un numero di
+valori interi prefissato (a tempo di scrittura del programma), 
+li inserisca in un vettore, stampi il vettore risultante, lo ordini poi in 
+senso crescente, e lo stampi nuovamente.
+Implementare l'ordinamento all'interno di una funzione a cui viene passato 
+sia l'array che le sue dimensioni.
+*/
+/*
+Scrivere un programma che compie le seguenti azioni:
+a) definisce ed inizializza due costanti N ed M;
+b) definisce tre vettori di interi di dimensioni N, M ed N+M;
+c) inizializza ciascuno dei due array con una sequenza di valori ordinata in 
+   senso crescente di valori (la sequenza è definita a tempo di scrittura del
+   programma);
+c) copia il contenuto di entrambi i vettori nel terzo vettore;
+   la copia deve essere effettuata visitando non più di una volta ciascun 
+   elemento dei primi due vettori;
+d) stampa i tre vettori.
+*/

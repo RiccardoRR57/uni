@@ -1,0 +1,36 @@
+package ex2;
+
+public class ContoCorrente {
+	private int numCC;
+	private int saldo;
+	private int movimenti[];
+	private int numMovimenti;
+	
+	public ContoCorrente(int numCC, int saldo) {
+		setNumCC(numCC);
+		setSaldo(saldo);
+		this.movimenti = new int[20];
+		this.numMovimenti = 0;
+	}
+	
+	void prelievo(int importo) {
+		this.saldo -= importo;
+	}
+	
+	private void movimento(int importo) {
+		this.saldo += importo;
+		if(this.numMovimenti%10 == 0) {
+			int oldMovimenti[] = this.movimenti;
+			this.movimenti = new int[numMovimenti+10];
+			this.movimenti = Arrays.copyOf(oldMovimenti, this.movimenti.length);
+		}
+	}
+
+	public void setNumCC(int numCC) {
+		this.numCC = numCC;
+	}
+
+	public void setSaldo(int saldo) {
+		this.saldo = saldo;
+	}
+}

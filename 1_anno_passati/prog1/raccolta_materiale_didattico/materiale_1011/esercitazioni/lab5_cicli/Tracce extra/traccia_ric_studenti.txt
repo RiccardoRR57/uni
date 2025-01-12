@@ -1,0 +1,14 @@
+Ricevimento studenti
+
+Supponiamo di andare a ricevimento da un professore. Con le domande che 
+dobbiamo fare ci basterebbero 10 minuti, solo che, appena ci sediamo il 
+professore riceve una telefonata e chiacchiera per 2 minuti. Dopo 5 minuti
+ne riceve un'altra, e parla per altri 2 minuti. E così via: ogni 5 minuti 
+riceve una telefonata e chiacchiera per 2 minuti. Quanto tempo impiegheremo 
+prima di avere risposta a tutte le nostre domande?
+Ovviamente tale tempo non è 14 minuti, come si potrebbe erroneamente pensare ...
+
+Realizzare un programma che calcoli, in generale, la durata di un ricevimento,
+data una durata qualsiasi delle domande, dell'intervallo di tempo tra una 
+telefonata e l'altra, e di ciascuna telefonata (la durata è uguale per tutte 
+le telefonate). 

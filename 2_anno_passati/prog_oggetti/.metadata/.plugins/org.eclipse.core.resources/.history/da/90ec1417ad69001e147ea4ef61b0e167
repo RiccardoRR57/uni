@@ -1,0 +1,16 @@
+package ex2;
+
+public class ContoCorrente {
+	private int numCC;
+	private int saldo;
+	private int movimenti[];
+	private int numMovimenti;
+	
+	public ContoCorrente(int numCC, int saldo) {
+		
+	}
+
+	public void setNumCC(int numCC) {
+		this.numCC = numCC;
+	}
+}

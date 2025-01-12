@@ -1,0 +1,97 @@
+(Il seguente esercizio è la versione completa di quello parziale contenuto in 
+traccia_classifica_solo_elenco.txt)
+
+Dobbiamo gestire la classifica di una gara di SCI. Le fasi sono le seguenti:
+1 Iscrizione dei partecipanti
+2 Gara: per ogni partecipante si immette il tempo di discesa
+I dati di ciascun partecipante sono i seguenti: 
+. il nominativo (ad esempio il cognome) del partecipante
+. un valore intero rappresentante il miglior tempo fatto registrare dal 
+  partecipante (espresso in secondi)
+Le funzionalita' del programma sono le seguenti:
+. iscrizione di un nuovo partecipante
+	. si inserisce solo il nominativo (es: Tomba) del partecipante
+. stampa del numero di iscritti e dei nominativi 
+. gara: per ogni iscritto si chiede all'utente di inserire il tempo
+  espresso in minuti e secondi. Se si ripete una gara, la classifica viene 
+  annullata e riempita daccapo 
+. stampa primo classificato. I tempi sono espressi in minuti e secondi
+  (realizzare questa funzionalita' trovando il partecipante che ha realizzato
+   il tempo migliore tra quelli presenti nell'elenco).
+
+Il programma dovra' quindi fornire un menu del tipo:
+
+Gestione classifica
+Menu
+1 Inserimento di un nuovo partecipante
+2 Stampa elenco partecipanti
+3 Gara
+4 Stampa primo classificato
+5 Uscita
+
+-> per copiare stringhe si puo' utilizzare la funzione 
+	strcpy(destinazione, sorgente) 
+-> trascuriamo il problema dell'inserimento di piu' partecipanti con lo stesso
+   nominativo
+
+Soluzione in classifica.cc
+
+Estensioni al programma:
+1 Far si che, ogni volta che si effettua una nuova iscrizione, il partecipante
+  sia inserito nell'elenco in ordine alfabetico.
+  Si puo' utilizzare la funzione di libreria strcmp, che, tra l'altro,
+  e' gia' predisposta per determinare anche l'ordine alfabetico di stringhe 
+  composte da piu' parole (separate da spazi).
+  strcmp(nome1, nome2) < 0 => nome1 precede alfabeticamente nome2 
+  strcmp(nome1, nome2) = 0 => nome2 e nome1 contengono la stessa stringa 
+  strcmp(nome1, nome2) > 0 => nome2 precede alfabeticamente nome1 
+
+Soluzione in classifica_elenco_ordinato.cc
+
+
+2 Al termine della gara, stampare primo, secondo e terzo classificato (questa 
+  estensione puo' essere propedeutica per capire come realizzare la successiva)
+
+Soluzione in classifica_123.cc
+
+
+3 Aggiungere la funzionalita' stampa classifica: ogni volta che viene 
+  richiesto, il programma stampa la classifica relativa all'ultima
+  gara effettuata (cioe', a meno che non si effettui una nuova gara,
+  si ottiene sempre la stessa classifica). Pertanto, anziche'
+  ricalcolare la classifica ogni volta che ne viene richiesta la
+  stampa, conviene calcolarla una volta per tutte (quando si
+  inseriscono i tempi di ciascun partecipante). Uno dei modi per
+  ottenere la classifica è riordinare il vettore in base al tempo di
+  ciascun partecipante. Pero', cosi' facendo, si perde l'ordinamento
+  alfabetico della lista dei partecipanti. Una soluzione per non
+  perdere l'ordinamento della lista dei partecipanti, puo' essere
+  quella di memorizzare la classifica in un secondo vettore, ordinato
+  in base ai tempi fatti registrare dai partecipanti. Questa soluzione
+  ha lo svantaggio di occupare abbastanza memoria, comunque e' una
+  delle strade percorribili.  Una soluzione ottimizzata e' la
+  seguente. Si aggiunge un campo a ciascun elemento del vettore. Per
+  ciascun partecipante P, possiamo memorizzare in tale campo il
+  partecipante che ha fatto registrare il tempo immediatamente
+  successivo a quello di P... In questo modo, potremmo 'immergere' la
+  classifica nella lista dei partecipanti stessa ...
+
+Soluzione in classifica_completa.cc
+
+
+4 implementare anche la disiscrizione di un partecipante
+
+5 ogni volta che si iscrive un nuovo partecipante, richiedere sia il nome che
+  il cognome. Le due stringhe contenenti il nome ed il cognome immessi da 
+  tastiera vanno quindi concatenate e copiate nel nominativo: si puo' 
+  utilizzare la funzione di libreria strcat, per farlo bisogna aggiungere la 
+  direttiva #include <string.h>
+  Assicurarsi (ed eventualmente effettuare delle conversioni) che la prima 
+  lettera di ciascuna parola del nominativo sia maiuscola e che tutte le altre
+  siano minuscole.
+  Ad esempio, se l'utente immette: "tOMBA aLberTo", il nominativo, prima di 
+  essere inserito, va convertito nella forma "Tomba Alberto".
+  Possono tornare utili funzioni di libreria come la 'tolower' e la 'toupper':
+  per utilizzarle occorre la direttiva #include <ctype.h>
+
+Soluzione per gli ultimi due punti in classifica_tutto.cc

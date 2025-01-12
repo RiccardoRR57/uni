@@ -1,0 +1,48 @@
+Riprendere il programma sulla gara di SCI, la cui traccia e' nel file
+tracca_classifica.txt, ed estenderlo per gestire una gara costituita
+da piu' manche. Il programma presenta il seguente menu:
+
+Gestione classifica
+Menu
+1 Inserimento di un nuovo partecipante
+2 Stampa elenco partecipanti
+3 Cambiamento numero di manche (valore attuale 3)
+4 Gara
+5 Stampa classifica
+5 Uscita
+
+Le opzioni 1 e 2 hanno lo stesso significato che avevano nel programma 
+classifica.
+L'opzione 3 permette di cambiare il numero di manche da effettuare in ogni gara
+(che, per default, sono 3).
+L'opzione 4 permette di effettuare la gara: per ogni partecipante verra'
+richiesto il tempo fatto registrare in ciascuna manche.
+L'opzione 5 permette di stampare la classifica completa della gara. La 
+classifica e' stilata in base al miglior tempo di ciascun partecipante
+(il miglior tempo di un partecipante è il  minimo tra i tempi che ha ottenuto
+in ciascuna manche).
+
+Supponiamo che vi sia stata una gara di due manche, tra tre partecipanti:
+Paolo Valente, Alberto Tomba e Christian Ghedina. 
+I risultati sono i seguenti:
+
+Nominativo		Manche 1		Manche 2
+
+Ghedina Christian	1.15			1.18
+Tomba Alberto		1.14			1.19
+Valente	Paolo		1.19			1.13
+
+L'output del programma deve essere il seguente:
+
+Nominativo		Manche 1		Manche 2
+
+Valente	Paolo		1.19			< 1.13 >
+Tomba Alberto		< 1.14 >		1.19
+Ghedina Christian	< 1.15 >		1.18
+
+Nella stampa della classifica, il tempo migliore per ciascun partecipante
+e' stampato tra parentesi angolari.
+
+Estensione: Ordinare la classifica in base ai tempi medi fatti registrare da
+ciascun partecipante.
+

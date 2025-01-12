@@ -1,0 +1,146 @@
+I  seguenti   programmi  vanno  scritti  usando   solo  istruzioni  di
+assegnamento,  operatori aritmetici  ed istruzioni  di ingresso/uscita
+(niente  if,  for, while,  ecc.).  Inoltre  non  si devono  utilizzare
+operatori di confronto (<, <=, >,  >=, !=, ==) ed operatori logici (!,
+&&, ||).
+
+------------------
+
+Traccia:  Scrivere  un  programma  che  legge da  tastiera  un  numero
+naturale m ed  un numero naturale n, che deve essere  compreso tra 0 e
+m.  Dopo aver letto tali numeri,  il programma stampa 1 se il numero n
+e' maggiore  di zero, altrimenti  stampa zero.  Scrivere  il programma
+dando per  scontato che  l'utente non imbrogli,  e quindi  rispetti il
+vincolo di  inserire un  numero n  compreso tra 0  e m.  Non facciamo,
+pertanto, nessun controllo sul valore del numero in ingresso.
+
+Un possibile output su schermo e' il seguente:
+
+Immettere il valore di m: 35213
+Immettere un numero compreso tra 0 e 35213: 231
+Risultato: 1
+
+Vi potrebbero tornare utili i seguenti due suggerimenti, ma, prima di
+leggerli, vi consiglio di provare a trovare la soluzione da soli.
+
+1 Dati due numeri a ed m, se a<m, la divisione intera tra a ed m da come 
+  risultato 0.
+  Se, invece, m <= a < 2*m, allora la divisione intera tra a ed m, da come
+  risultato 1.
+2 Consideriamo il numero n che leggiamo in ingresso nel programma. Supponiamo
+  che, a partire dal valore di n, riusciamo sempre a calcolare un numero a, che
+  abbia la seguente proprieta':
+	. se n e' uguale a zero, allora a<m
+	. se n>0, allora 
+		m <= a < 2*m
+  Se troviamo il modo di calcolare il valore di a, potremmo calcolare
+  il valore da stampare in uscita sfruttando il suggerimento 1.
+
+Soluzione:
+
+#include <iostream.h>
+
+int main()
+{
+	int n, m ;
+
+        cout<<"Immettere il valore di m: " ;
+	cin>>m ;		
+        cout<<"Immettere un numero compreso tra 0 e "<<m<<": " ;
+	cin>>n ;
+
+	cout<<"Risultato: "<< (n+(m-1))/m <<endl ;
+	
+	return 0 ;
+}
+
+
+-------------
+
+Sfruttando il trucco utilizzato per realizzare il precedente programma,
+possiamo realizzare anche il programma seguente:
+
+Traccia: Scrivere un programma che legge da tastiera un numero naturale m e
+due numeri naturali i e j. Il numero j deve essere compreso tra 0 e m.
+Il programma stampa 1 se il numero i e' multiplo di j, 
+altrimenti stampa zero.
+Scrivere il programma dando per scontato che l'utente non imbrogli
+e, quindi, rispetti il vincolo di inserire un numero j compreso tra 0 e 
+m. Non facciamo, quindi, nessun controllo sul valore del numero j in 
+ingresso.
+-> Ricordatevi che il resto della divisione intera tra i e j, e' un numero
+compreso tra 0 e j-1. Inoltre, il resto della divisione intera fa zero proprio
+quando due numeri sono uno multiplo dell'altro, mentre in questo caso
+il nostro programma deve stampare 1.
+
+Un possibile output su schermo e' il seguente:
+
+Immettere il valore di m: 9
+Immettere il numero i: 7
+Immettere il numero j (che deve essere compreso tra 0 e 9): 3
+Risultato: 0
+
+Soluzione:
+
+#include <iostream.h>
+
+int main()
+{
+	int m, i, j ;
+
+	cout<<"Immettere il valore di m: " ;
+	cin>>m ;		
+	cout<<"Immettere il numero i: " ;
+	cin>>i ;
+	cout<<"Immettere il numero j"
+	    <<" (che deve essere compreso tra 0 e "<<m<<"): " ;
+	cin>>j ;
+
+	int risultato =  ((i%j) + (m-1) ) / m;
+
+	// Quando i e' multiplo di j, voglio stampare 1; pero' quando i e' 
+	// multiplo di j, i%j mi da zero. Quindi, per poter stampare 1 quando 
+	// i e' multiplo di j (e, viceversa, stampare 0 quando i non e' 
+	// multiplo di j), faccio il seguente assegnamento, per invertire il 
+	// valore della variabile risultato: 
+	risultato = 1 - risultato ; 
+    
+	cout<<"Risultato: "<<risultato<<endl ;
+	
+	return 0 ;
+}
+
+-------------------
+
+Traccia: Scrivere un programma che legge da tastiera un numero naturale m.
+Successivamente chiede di immettere due numeri naturali n ed i, compresi tra 0 e m.
+Il programma stampa 1 se n > i, altrimenti stampa 0.
+
+Un possibile output su schermo e' il seguente:
+
+Immettere il valore di m: 200
+Immettere il numero n (compreso tra 0 e 200): 176
+Immettere il numero i (compreso tra 0 e 200): 85
+Risultato: 1
+
+Soluzione:
+
+#include <iostream.h>
+
+int main()
+{
+	int n, i ;
+	
+	cout<<"Immettere il valore di m: " ;
+	cin>>m ;
+	cout<<"Immettere il numero n (compreso tra zero ed m): " ;
+	cin>>n ;
+    	cout<<"Immettere il numero i: " ;
+	cin>>i ;
+    	
+	int risultato = ((n-i) + (m-1) ) / m;
+    	
+	cout<<"Risultato: "<<risultato<<endl ;
+	
+	return 0 ;
+}

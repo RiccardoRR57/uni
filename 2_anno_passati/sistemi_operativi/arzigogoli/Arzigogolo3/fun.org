@@ -1,0 +1,48 @@
+#+AUTHOR: Rimondi Riccardo
+#+TITLE: Funzioni
+
+* Funzioni
+Una funzione è una legge che associa ad ogni elemento di un determinato insieme uno e un solo elemento di un altro insieme.
+
+** Dominio
+Il dominio di una funzione è l'insieme che racchiude tutti i valori per cui la funzione stessa è definita.
+
+** Codominio
+Il codominio di una funzione è l'insieme che racchiude tutti i valori potenzialmente raggiungibili dalla funzione stessa.
+
+** Intervallo
+L'intervallo di una funzione è l'insieme di tutti i valori effettivamente raggiunti dalla funzione.
+
+** Esempio Tabella
+y = 2x+1
+|  x |  y |
+|----+----|
+|  5 | 11 |
+| -2 | -3 |
+|  0 |  1 |
+|  2 |  5 |
+|  5 | 11 |
+#+TBLFM: $2=2*$1+1
+
+** Esempio Grafico
+y = 2x+1
+#+BEGIN_SRC gnuplot :exports results :file fun.png
+  reset
+
+  set xlabel "x"
+  set ylabel "y"
+
+  set zeroaxis
+  set border 0
+  set xtics axis
+  set ytics axis
+  set ticscale 0
+  
+  f(x) = (x*2)+1
+
+  plot [-5:5] [-5:5] f(x) notitle
+#+END_SRC
+
+#+RESULTS:
+[[file:fun.png]]
+

@@ -1,0 +1,25 @@
+/* Programma per la gestione di una Catena di Anelli.
+   Gli anelli della catena possono essere di RAME o di FERRO.
+   Possono essere presenti al piu' due anelli di RAME, mentre non
+   esiste un limite al numero di anelli di FERRO. All'inizio la 
+   catena e’ vuota.
+   Gli anelli della catena sono numerati a partire da 1.
+   Il programma deve fornire un menu con le seguenti operazioni:
+   1) inserire un anello di RAME o di FERRO in posizione j (uno alla volta)
+      Le posizioni ammissibili vanno dalla prima a quella immediatamente 
+      successiva all'ultima. Il programma da un messaggio di notifica nel caso
+      in cui non sia possibile effettuare l'inserimento.
+      Quando un anello Ë inserito nella posizione j, tutti quelli che si 
+      trovano nelle posizioni da j in poi si spostano in avanti di una 
+      posizione. Il numero totale di anelli aumenta ovviamente di una unita’.
+   2) eliminare l'anello in posizione j (uno alla volta)
+      Il programma da un messaggio di notifica nel caso in cui non sia
+      possibile effettuare l'estrazione.
+      Cosa succede agli anelli dalla posizione j+1 in poi?
+   3) stampare la catena nel seguente formato:
+       FFRFR
+       dove F indica un anello di FERRO; R indica un anello di RAME.
+       La catena precedente ha 5 anelli; gli in posizione 1, 2 e 4 sono di 
+       ferro, mentre gli anelli in posizione 3 e 5 sono di RAME.
+   4) Terminare
+*/

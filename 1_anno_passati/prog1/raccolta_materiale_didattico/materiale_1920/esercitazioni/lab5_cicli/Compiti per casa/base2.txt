@@ -1,0 +1,160 @@
+Indicazioni generali:
+
+-> attenzione al fatto che le cifre nella codifica binaria (come in qualsiasi
+   altra codifica), si contano a partire da quella meno significativa (quella
+   piu' a destra). In particolare tale cifra ha ordine zero, quella 
+   immediatamente piu' a sinistra e' di ordine 1, e cosi' via.
+
+Nei seguenti programmi, non utilizzare gli operatori bit a bit (che
+non avete visto a lezione).
+
+Ovviamente non va utilizzato alcun altro costrutto non ancora visto a lezione.
+
+Nello svolgimento di alcuni degli esercizi puo' tornarvi utile
+aver risposto alla seguente domanda: che succede alla configurazione
+di bit che rappresenta un numero intero non negativo se si moltiplica
+il numero per 2^i (2 elevato alla i)? E se invece si divide il numero
+per 2^i?
+
+---------------------
+
+Traccia: Realizzare un programma che legge in ingresso un numero
+intero non negativo in base 10 e stampa la rappresentazione in base 2
+di tale numero.
+
+Un possibile output e' il seguente:
+
+Inserisci un numero: 46
+La rappresentazione del numero 46 in base 2 e'
+101110
+
+NOTA: Se non vi viene in mente una buona idea per stampare le cifre
+nell'ordine giusto, va bene anche la stampa in ordine inverso.
+
+----------------------
+
+Traccia: Realizzare un programma che legge in ingresso un numero
+intero non negativo (in base 10) e stampa la configurazione binaria
+(su un numero di cifre pari al numero di cifre su cui sono
+rappresentati i numeri interi sulla macchina) che lo rappresenta in
+base 2.
+
+Un possibile output e' il seguente:
+Inserisci un numero 37127634
+La rappresentazione di 37127634 su 32 cifre e'
+00000010001101101000010111010010
+
+----------------
+
+Traccia: Realizzare un programma che legge in ingresso un numero
+intero (in base 10) e stampa la rappresentazione in base 2 (e con
+segno) di tale numero.
+
+Un possibile output e' il seguente:
+
+Inserisci un numero -563
+La rappresentazione del numero -563 in base 2 e'
+-1000110011
+
+--------------------
+
+Scrivere un programma che legge in ingresso una sequenza di numeri interi,
+ciascuno dei quali può' essere solo 0 oppure 1. Se l'utente immette un numero
+diverso, allora la lettura delle cifre termina.
+
+Durante la lettura il programma calcola e stampa il numero in base 10 corrispondente
+alla sequenza di cifre in base 2 inserite fino a quel punto. In particolare, quando
+l'utente inserisce qualcosa di diverso da 0 o 1, il programma stampa il valore
+finale del numero in base 10 ed esce.
+
+Un possibile esempio di input/output è il seguente:
+
+Prossima cifra in base 2: 0
+Numero in base 10: 0
+
+Prossima cifra in base 2: 1
+Numero in base 10: 2
+
+Prossima cifra in base 2: 0
+Numero in base 10: 2
+
+Prossima cifra in base 2: 2
+Numero in base 10: 2
+
+Suggerimento per la soluzione.
+Considerate che, se si calcola il valore del numero da stampare, in funzione del
+valore delle cifre immesse e del peso credente di tali cifre, e lo si memorizza
+in una variabile di tipo int, allora la stampa del contenuto di tale variabile fornirà
+proprio il numero in base 10 richiesto ad ogni passo.
+
+--------------------
+
+Supponiamo di sfruttare la configurazione di bit che rappresenta un
+numero intero non negativo c per nascondere un ulteriore numero intero
+non negativo n.  La tecnica con cui il numero n viene inserito nel
+numero c, e' la seguente: si prende la configurazione di bit che
+rappresenta n, la si fa precedere e seguire da un bit a 1 e si
+inserisce la configurazione risultante a partire dalla cifra di ordine
+n (in quanto al concetto di ordine di una cifra, rivedere le
+indicazioni generali date all'inizio di questa raccolta di esercizi)
+della configurazione di bit che rappresenta il numero intero non
+negativo c (tutti i bit di c, al di fuori della configurazione che vi
+abbiamo immerso dentro, sono a zero).  
+
+Vediamo un esempio. Supponiamo di voler inserire il numero 4
+all'interno di un numero intero non negativo rappresentato su 32
+bit. La rappresentazione binaria del numero 4 e' la seguente: 100.
+
+La configurazione che dobbiamo immergere e', quindi, 11001.
+L'ordine della cifra a partire dalla quale la immergiamo e' 4.
+La configurazione risultante su 32 bit e' quindi:
+00000000 00000000 00000001 10010000.
+Per evitare problemi di overflow, supponiamo sempre che n<=16.
+
+Traccia: Scrivere un programma che legga in ingresso un numero intero
+non negativo n minore o uguale a 16, e lo immerga nella configurazione
+di un altro numero intero non negativo, in base all'algoritmo definito
+prima.
+
+Il programma stampa quindi 
+. il numero da nascondere in base 2
+. il numero risultante in base 10 
+. il numero risultante in base 2.
+
+Un possibile output e' il seguente:
+
+Inserisci il numero (compreso tra 0 e 16) da nascondere: 3
+La configurazione del numero da inserire in base 2 e'
+00000000000000000000000000000011
+Il numero risultante e' 120
+La configurazione risultante in base 2 e'
+00000000000000000000000001111000
+
+--------------------
+
+Traccia: Scrivere un programma che legge in ingresso un numero intero
+non negativo e, in funzione all'algoritmo definito sopra, stampa
+. il valore del numero inserito in base 2
+Successivamente, se tale configurazione rappresenta correttamente un
+numero nascosto, allora stampa
+. il valore del numero che vi e' stato nascosto dentro, in base 10
+. il valore del numero che vi e' stato nascosto dentro, in base 2
+Altrimenti segnala che non c'e' alcun numero nascosto nella configurazione
+del numero letto da tastiera.
+
+Un possibile output e' il seguente:
+
+Inserisci il numero 120
+La configurazione in ingresso e'
+00000000000000000000000001111000
+Il numero nascosto e' 3
+La configurazione risultante in base 2 e'
+00000000000000000000000000000011
+
+Un altro possibile output e' il seguente:
+
+Inserisci il numero 3782
+La configurazione in ingresso e'
+00000000000000000000111011000110
+Mi dispiace, ma non c'e' nessun numero nascosto nella
+configurazione in ingresso.

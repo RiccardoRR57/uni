@@ -1,0 +1,3 @@
+Scrivere una funzione che, dato un vettore in ingresso, e senza utilizzare variabili di appoggio in cui memorizzare temporaneamente valori degli elementi del vettore, stampi il
+numero di occorrenze di ciascun elemento del vettore.
+Supporre che la funzione abbia la possibilità di modificare il vettore a piacimento.

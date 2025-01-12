@@ -1,0 +1,12 @@
+9
+Queen	Bohemian_Rhapsody	1975 r 60 
+Pollini	Chopin_Nocturnes	2005 c 20 
+Perahia	Bach_Suites_Inglesi	2012 c 5
+Genesis	I_Know_What_I_Like	1973 r 15
+Jackson	The_Girl_Is_Mine	1983 p 43
+SferaEb	Quello_che_non_va	2015 t 43
+Eminem	The_Real_Slim_Shady	2000 h 32
+BrMars	Just_the_Way_You_Are	2010 p 21
+Eagles	Hotel_California	1976 r 33	
+
+

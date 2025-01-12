@@ -1,0 +1,26 @@
+Percorso Semplificato
+
+Un Percorso è formato da N caselle, ciascuna delle quali può assumere
+il colore bianco od il colore nero. Le operazioni che possono essere
+effettuate su un percorso sono le seguenti:
+
+. inizializza(p, N, c);
+Inizializza un percorso p di lunghezza N. Inizialmente, tutte le
+caselle sono di colore c.
+
+· inizializza_copia(p1, p); 
+
+Inizializza il valore del percorso p1 col valore del percorso p.
+
+·	cambiaColore(p, i)
+Operazione che cambia il colore della i-esima casella del percorso p.
+
+·	stampa(p)
+Operatore di uscita per il tipo Percorso. L'uscita ha la forma seguente:
+		bbnnnb
+
+Il carattere 'b' rappresenta una casella bianca, il carattere
+'n' rappresenta una casella nera.
+
+Utilizzando il linguaggio C++, realizzare il tipo di dato Percorso,
+definito dalle precedenti specifiche.

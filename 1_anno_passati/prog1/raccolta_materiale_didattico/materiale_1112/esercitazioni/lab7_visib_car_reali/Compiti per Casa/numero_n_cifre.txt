@@ -1,0 +1,6 @@
+Scrivere un programma che chieda all'utente di inserire un numero
+intero positivo n (grande a piacere), e stampi sullo schermo un numero
+intero positivo casuale con al più n cifre in base 10.  Se necessario,
+le funzioni di libreria per la generazione di numeri casuali sono
+descritte in traccia_RSA_int_char.txt.
+

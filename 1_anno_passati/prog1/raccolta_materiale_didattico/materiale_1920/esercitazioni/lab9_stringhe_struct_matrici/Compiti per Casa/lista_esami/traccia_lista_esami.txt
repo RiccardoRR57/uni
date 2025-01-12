@@ -1,0 +1,39 @@
+Realizziamo un programma che permetta di gestire la lista degli studenti 
+iscritti ad un esame.
+Per il momento supponiamo che, per ciascuno studente, inseriamo solo il cognome.
+Le funzionalita' del programma sono le seguenti:
+. iscrizione di un nuovo studente
+. stampa del numero di iscritti e dei nominativi 
+
+-> per lavorare con le stringhe, puo' essere conveniente sfruttare le funzioni di 
+   libreria
+-> trascuriamo i problemi legati all'inserimento di piu' studenti con lo stesso
+   cognome
+
+La soluzione si trova nel file: sol_lista_esami_base.c.
+
+Estensioni al programma:
+
+. far sì che, ogni volta che si effettua una nuova iscrizione, lo studente
+  sia inserito nell'elenco in ordine alfabetico 
+  Si puo' utilizzare la funzione di libreria strcmp, che e' gia' predisposta 
+  per determinare anche l'ordine alfabetico di stringhe composte da piu' 
+  parole (separate da spazi).
+  strcmp(nome1, nome2) < 0 => nome1 precede alfabeticamente nome2 
+  strcmp(nome1, nome2) = 0 => nome2 e nome1 contengono la stessa stringa 
+  strcmp(nome1, nome2) > 0 => nome2 precede alfabeticamente nome1 
+  La soluzione di questa seconda versione si trova nel file: 
+  sol_lista_esami_ordinata.c.
+
+. ogni volta che si iscrive un nuovo partecipante, richiedere sia il nome che il
+  cognome. Le due stringhe contenenti il nome ed il cognome immessi da tastiera 
+  vanno quindi concatenate e copiate nel nominativo.
+  Assicurarsi (ed eventualmente effettuare delle conversioni) che la prima 
+  lettera di ciascuna parola del nominativo sia maiuscola e che tutte le altre
+  siano minuscole.
+  Ad esempio, se l'utente immette: "tOMBA aLberTo", il nominativo, prima di 
+  essere inserito, va convertito nella forma "Tomba Alberto".
+  La soluzione di questa terza versione si trova nel file: 
+  sol_lista_esami_completa.c.
+
+. implementare anche la disiscrizione di uno studente

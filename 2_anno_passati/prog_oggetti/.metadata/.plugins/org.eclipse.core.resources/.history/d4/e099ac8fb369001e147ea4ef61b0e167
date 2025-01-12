@@ -1,0 +1,66 @@
+package ex2;
+
+import java.util.Arrays;
+
+public class ContoCorrente {
+	private int numCC;
+	private int saldo;
+	private int movimenti[];
+	private int numMovimenti;
+	
+	public ContoCorrente(int numCC, int saldo) {
+		setNumCC(numCC);
+		setSaldo(saldo);
+		this.movimenti = new int[20];
+		this.numMovimenti = 0;
+	}
+	
+	void prelievo(int importo) {
+		this.movimento(-importo);
+	}
+	
+	void versamento(int importo) {
+		this.movimento(importo);
+	}
+	
+	/**
+	 * Aggiunge un elemento ai movimenti, aggiorna il saldo, 
+	 * se l'array non ha più spazio viene esapanso per contenere altri 10 elementi
+	 * @param importo
+	 */
+	private void movimento(int importo) {
+		this.setSaldo(this.getSaldo() + importo);
+		if(this.numMovimenti%10 == 0) {
+			int oldMovimenti[] = this.movimenti;
+			this.movimenti = new int[this.numMovimenti+10];
+			this.movimenti = Arrays.copyOf(oldMovimenti, this.numMovimenti+10);
+		}
+		this.movimenti[numMovimenti++] = importo; 
+	}
+
+	private void setNumCC(int numCC) {
+		this.numCC = numCC;
+	}
+
+	public int getSaldo() {
+		return saldo;
+	}
+
+	public void setSaldo(int saldo) {
+		this.saldo = saldo;
+	}
+	
+	public void print() {
+		System.out.println("Numero Conto: " + this.numCC);
+		System.out.println("Saldo Attuale: " + this.saldo);
+		for(int movimento : this.movimenti) {
+			if(movimento > 0) {
+				System.out.print("Versamento: ");
+			}
+			else {
+				System.out.print("Prelievo: ");
+			}
+			System.out.println(Math.abs(movimento));
+		}
+	}
+}

@@ -1,0 +1,27 @@
+La congettura di Goldbach è uno dei più vecchi problemi irrisolti
+nella teoria dei numeri. Essa afferma che ogni numero pari maggiore di
+2 può essere scritto come somma di due numeri primi (lo stesso numero
+primo può essere usato due volte).  Nessuno finora e' riuscito a
+dimostrare ne' che sia vera, ne' che sia falsa.
+
+Scrivere un programma che, presi in ingresso due numeri interi
+positivi maggiori di 2, verifica se vale la congettura di Goldbach per
+tutti i numeri tra essi compresi. In altri termini, per ogni numero n
+compreso in tale intervallo, il programma deve verificare se esistono
+almeno due numeri primi p_1 e p_2 (con eventualmente p_1 = p_2) tali
+che n = p_1 + p_2.
+
+Il programma deve essere realizzato chiedendo i du e estremi
+dell'intervallo all'utente nel main, e definendo/utilizzando due
+ulteriori funzioni. La prima deve prendere in ingresso, come parametri
+formali, gli estremi dell'intervallo e deve ritornare, se c'è, il
+primo numero maggiore di 2 di tale intervallo che non rispetta la
+congettura di Goldbach. La seconda funzione deve essere utilizzata per
+realizzare la prima e, dato un numero n, deve ritornare vero se
+rispetta la congettura di Goldbach e falso altrimenti.
+
+Notare che ritornare un valore a chi chiama una funzione e' una cosa
+diversa dallo stampare tale valore du stdout.  Riflettere sui modi
+possibili per far ritornare, da parte della prima funzione,
+l'indicazione che non ha trovato nessun numero che non verifichi la
+congettura di Goldbach.

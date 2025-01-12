@@ -1,0 +1,16 @@
+1. Aggiungi partecipante
+2. Stampa sondaggio
+3. Salva sondaggio
+4. Carica sondaggio
+5. Trova giorno migliore
+6. Esci
+
+
+1. Aggiungi partecipante
+2. Stampa sondaggio
+3. Salva sondaggio
+4. Carica sondaggio
+5. Trova giorno migliore
+6. Esci
+
+

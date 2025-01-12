@@ -1,0 +1,81 @@
+% Created 2023-10-23 Mon 14:35
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\author{Riccardo Rimondi}
+\date{\today}
+\title{Funzioni}
+\hypersetup{
+ pdfauthor={Riccardo Rimondi},
+ pdftitle={Funzioni},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 28.2 (Org mode 9.5.5)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+
+\section{Funzioni}
+\label{sec:orgfe86613}
+Una funzione è una legge che associa ad ogni elemento di un determinato insieme uno e un solo elemento di un altro insieme.
+
+\subsection{Dominio}
+\label{sec:orgc087995}
+Il dominio di una funzione è l'insieme che racchiude tutti i valori per cui la funzione stessa è definita.
+
+\subsection{Codominio}
+\label{sec:orga7e4943}
+Il codominio di una funzione è l'insieme che racchiude tutti i valori potenzialmente raggiungibili dalla funzione stessa.
+
+\subsection{Intervallo}
+\label{sec:orgc5d821b}
+L'intervallo di una funzione è l'insieme di tutti i valori effettivamente raggiunti dalla funzione.
+
+\subsection{Esempio Tabella}
+\label{sec:org9dfb1a5}
+y = 2x+1
+\begin{center}
+\begin{tabular}{rr}
+x & y\\
+\hline
+5 & 11\\
+-2 & -3\\
+0 & 1\\
+2 & 5\\
+5 & 11\\
+\end{tabular}
+\end{center}
+
+\subsection{Esempio Grafico}
+\label{sec:org42b6398}
+y = 2x+1
+\begin{verbatim}
+reset
+
+set xlabel "x"
+set ylabel "y"
+
+set zeroaxis
+set border 0
+set xtics axis
+set ytics axis
+set ticscale 0
+
+f(x) = (x*2)+1
+
+plot [-5:5] [-5:5] f(x) notitle
+\end{verbatim}
+\end{document}

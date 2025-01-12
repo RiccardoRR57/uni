@@ -1,0 +1,68 @@
+Scrivere una funzione che prende in ingresso una stringa e la elabora nella
+seguente maniera:
+. se il primo carattere e' una lettera minuscola, lo converte in una lettera 
+  maiuscola
+. se uno qualsiasi dei caratteri seguenti e' una lettra maiuscola, lo converte 
+  in una lettera minuscola
+Ad esempio, se la funzione riceve in ingresso la stringa "ciAo",  
+la converte nella stringa "Ciao".
+Possono tornare utili funzioni di libreria come tolower e toupper (per dettagli
+sulle funzioni di libreria e sui file di intestazione vedere, ad esempio, 
+www.cppreference.com).
+per utilizzarle si può includere:
+#include <cstdlib>
+
+Soluzione:
+
+/* 
+ * Converte una stringa alfabetica nel formato
+ * Prima lettera maiuscola
+ * Tutte le lettere successive minuscole
+ */
+void converti(char nome[])
+{
+    nome[0] = toupper(nome[0]) ;
+    /*
+     * Nella condizione del for, c'e' una conversione esplicita del valore di 
+     * ritorno della funzione strlen (che e' di tipo unsigned). 
+     * Ovviamente, anche 
+     * senza la conversione esplicita, il compilatore avrebbe effettuato una 
+     * conversione implicita. In casi come questo, se non si effettua una 
+     * conversione esplicita, il compilatore puo' dare un warning, per 
+     * segnalare l'eventuale presenza di un errore logico.
+     */
+    for (int i = 1 ; i < strlen(nome) ; i++)
+	nome[i] = tolower(nome[i]) ;
+}
+
+--------------------
+
+Scrivere una funzione che riceve in ingresso una stringa e suppone
+che, in tale stringa siano contenuti il cognome ed il nome di
+qualcuno.  La funzione elabora la stringa affinche' la prima lettera
+del cognome e la prima lettra del nome siano maiuscole e tutte le
+restanti lettere siano minuscole.  Ad esempio, se la funzione riceve
+in ingresso la stringa "tOmBa alBERto", la converte nella stringa
+"Tomba Alberto".  Data la somiglianza con l'esercizio precedente, non
+vi fornisco la soluzione.
+
+---------------------
+
+Utilizzando il programma figlet o un programma equivalente (dopo
+averlo installato se non presente nel proprio sistema) e le funzioni
+di libreria sulle stringhe, scrivere un programma che chiede
+all'utente di inserire una parola da stdin, e ristampa sul terminale
+tale parola utilizzando i font di default di figlet e trasformando il
+primo carattere in una lettera maiuscola nel caso in cui sia una
+lettera minuscola.
+
+Esempio:
+
+Parola da stampare: Paolo
+ ____             _       
+|  _ \ __ _  ___ | | ___  
+| |_) / _` |/ _ \| |/ _ \ 
+|  __/ (_| | (_) | | (_) |
+|_|   \__,_|\___/|_|\___/ 
+                          
+Soluzione non fornita.

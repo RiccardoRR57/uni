@@ -1,0 +1,4 @@
+#+BEGIN_SRC python
+def hello_world():
+  print("Hello, world!")
+#END_SRC
